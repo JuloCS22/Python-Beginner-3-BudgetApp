@@ -1,0 +1,98 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: small;
+    color: #EFCDAE;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    width: 100px;
+    height: 25px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+}
+
+button {
+    width: 60px;
+    height: 25px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: #F18435;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    height: 35px;
+}
+
+table {
+    width: 80%;
+    margin: 5%;
+    border: 5px solid #F18435;
+}
+
+th, td {
+    height: 20px;
+    width: 150px;
+    border-bottom: 1px solid #F18435;
+    text-align: left;
+}
+
+tr:last-child td, tr:last-child th {
+    border-bottom: 0;
+}
+
+
+.table_title {
+    text-align: center;
+}
+
+.total_table {
+    text-align: right;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.total_incomes {
+    color: darkgreen;
+}
+
+.total_expenses {
+    color: darkred;
+}
+
+.description_table {
+    font-size: small;
+}
+
+.pie_chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.pie_chart img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+}

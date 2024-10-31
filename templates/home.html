@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BudgetApp</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+</head>
+<body>
+    <h1>Budget App</h1>
+    <h2>V2.0</h2>
+
+    <form action="" method="post">
+        <label for="label_income">
+            <input type="text" name="label_income" id="label_income" placeholder="Income label" required />
+        </label>
+        <label for="add_income">
+            <input type="number" name="add_income" id="add_income" placeholder="$$$" required />
+        </label>
+        <button type="submit">Add</button>
+    </form>
+
+
+    <form action="" method="post">
+        <label for="label_expense">
+            <input type="text" name="label_expense" id="label_expense" placeholder="Expense label" required />
+        </label>
+        <label for="add_expense">
+            <input type="number" name="add_expense" id="add_expense" placeholder="$$$" required />
+        </label>
+        <button type="submit">Add</button>
+    </form>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" class="table_title">Incomes</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for source, amount in incomes.items() %}
+            <tr class="incomes_table">
+                <th scope="row" class="description_table">{{ source }}</th>
+                <td>${{ amount }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th scope="row">Total</th>
+                <td class="total_table total_incomes">${{ total_incomes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col"  class="table_title">Expenses</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for source, amount in expenses.items() %}
+            <tr class="expenses_table">
+                <th scope="row" class="description_table">{{ source }}</th>
+                <td>${{ amount }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th scope="row">Total</th>
+                <td class="total_table total_expenses">${{ total_expenses }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" class="table_title">Money left</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Total</th>
+                <td class="total_table money_left">${{ money_left }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pie_chart">
+        <img src="data:image/png;base64,{{ plot_url }}" alt="¨Pie Chart">
+    </div>
+</body>
+</html>
